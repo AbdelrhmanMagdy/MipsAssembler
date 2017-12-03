@@ -11,13 +11,19 @@ def assemble(instruction_array):
             elif element in instruction_table:
                 instruction[element_i]=instruction_table[element]['opcode']
                 if instruction_table[element]['type'] == 'RFormat':
-                    instruction.insert(len(instruction),'0x00') #add shamt
+                    instruction.insert(len(instruction),'00') #add shamt
                     instruction.insert(len(instruction),instruction_table[element]['func'])
-                    
+    # print(instruction_array)
     for word in instruction_array:
         output = ''
-        for element in  word:
-            output += element
+        if int(hex2bin(word[0],6))==0: #support R format
+            output += hex2bin(word[0],6)
+            output += hex2bin(word[2],5)
+            output += hex2bin(word[3],5)
+            output += hex2bin(word[1],5)
+            output += hex2bin(word[4],5)
+            output += hex2bin(word[5],6)
         word_array.append(output)
     
-    print(word_array)
+    # print(word_array)
+    return word_array

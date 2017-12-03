@@ -14,8 +14,10 @@ def main(argv):
         instructions  = myFile.readlines()
         instruction_array = assembly_parser.parse(instructions)
         output        = assembler.assemble( instruction_array )
-
-
+        with open('output.bin','w') as f:
+            for i in output:
+                f.write(i)
+                f.write('\n')
 if __name__ == '__main__':
     main(sys.argv[1:])
 
