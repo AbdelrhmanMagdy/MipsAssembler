@@ -16,7 +16,7 @@ def main(argv):
         print(instruction_array)
         output        = assembler.assemble( instruction_array )
         print(output)
-        with open('output.bin','w') as f:
+        with open('guiOutput.bin','w') as f:
             for i in output:
                 f.write(i)
                 f.write('\n')
