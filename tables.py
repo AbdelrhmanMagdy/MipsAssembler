@@ -5,10 +5,12 @@ instruction_table = {
 	'nor'   : {'type':'RFormat','opcode':'0x00','func':'0x27'},
 	'or'    : {'type':'RFormat','opcode':'0x00','func':'0x25'},
 	'sub'   : {'type':'RFormat','opcode':'0x00','func':'0x22'},
-	'beq'   : {'type':'Iformat','opcode':'0x04'},
-	'bne'   : {'type':'Iformat','opcode':'0x05'},
-	'lw'    : {'type':'Iformat','opcode':'0x23'},
-    'sw'    : {'type':'Iformat','opcode':'0x2B'},
+	'sll'   : {'type':'RFormat','opcode':'0x00','func':'0x00'},
+	'srl'   : {'type':'RFormat','opcode':'0x00','func':'0x02'},
+	'beq'   : {'type':'IFormat','opcode':'0x04'},
+	'bne'   : {'type':'IFormat','opcode':'0x05'},
+	'lw'    : {'type':'IFormat','opcode':'0x23'},
+    'sw'    : {'type':'IFormat','opcode':'0x2B'},
 	}
 
 register_table = {

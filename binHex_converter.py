@@ -28,3 +28,18 @@ def bin2hex(bit_string):
     hex_string = str(hex(int(bit_string, 2)))[2:]
     hex_string = hex_string.zfill(2)
     return hex_string
+
+def intTo16Bin(strIn):
+	# txt.replace('-','')
+	# print(txt)
+	if strIn[0]=='-':
+		posTxt = strIn.replace('-','')
+		# print(posTxt)
+		x = '{0:016b}'.format(int(posTxt))
+		for index,char in enumerate(x):
+			if char=='0':
+				x = x.replace('0','1',1)
+			else:break
+		return x
+	else:
+		return '{0:016b}'.format(int(strIn)) 

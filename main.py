@@ -13,7 +13,9 @@ def main(argv):
         myFile        = open(filename)
         instructions  = myFile.readlines()
         instruction_array = assembly_parser.parse(instructions)
+        print(instruction_array)
         output        = assembler.assemble( instruction_array )
+        print(output)
         with open('output.bin','w') as f:
             for i in output:
                 f.write(i)
